@@ -6,7 +6,7 @@ import GameContext from "@/contexts/GameContext"
 
 export default function Scoreboard() {
 
-    const {player1, player2} = useContext(GameContext)
+    const {player1, player2, ties} = useContext(GameContext)
 
     function renderItem(label: string, value: number, color: string){
         return (
@@ -24,7 +24,7 @@ export default function Scoreboard() {
     return (
         <div className="flex gap-7">
            {renderItem(`${player1.type} (${player1.name})`, player1.score, 'primary')} 
-           {renderItem("Empates", 0, 'light')} 
+           {renderItem("Empates", ties, 'light')} 
            {renderItem(`${player2.type} (${player2.name})`, player2.score, 'secondary')} 
         </div>
     )
