@@ -1,14 +1,15 @@
-import CellArea from "@/components/game/CellArea";
-import { PlayerType } from "core";
+import BoardArea from "@/components/game/BoardArea";
+import Scoreboard from "@/components/game/Scoreboard";
+import Menu from "@/components/menu";
+import Result from "@/components/result";
 
 export default function Home() {
   return (
-    <div>
-     <CellArea type={PlayerType.X} selected/>
-     <CellArea type={PlayerType.O} selected/>
-     <CellArea type={PlayerType.X} />
-     <CellArea type={PlayerType.O} />
-     <CellArea />
+    <div className="flex flex-col gap-7">
+      <Result/>
+      <Menu/>
+      <BoardArea/>
+      <Scoreboard/>
     </div>
   );
 }
